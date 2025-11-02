@@ -1,0 +1,42 @@
+<section class="page-header">
+  <div class="container">
+    <div class="page-info-title">
+      <div>
+        <h1 class="page-title">Tüm Kullanıcılar</h1>
+        <p class="page-subtitle">Sistemdeki adaylara göz atın ve arama yapın.</p>
+      </div>
+
+      <app-counter-card [title]="'Toplam Kullanıcı'" [value]="users().length" [icon]="'group'">
+      </app-counter-card>
+    </div>
+  </div>
+</section>
+<app-search-input (search)="handleSearch($event)" [placeholder]="placeholder"> </app-search-input>
+
+<section class="section">
+  <div class="container">
+    <app-loading-bar
+      *ngIf="isLoading()"
+      label="Kullanıcılar yükleniyor..."
+      [indeterminate]="true"
+      [height]="10"
+      barColor="#203f86"
+      trackColor="#e5e7eb"
+      [radius]="10"
+    >
+    </app-loading-bar>
+
+    <div *ngIf="!isLoading() && !error()" class="grid">
+      <ng-container *ngFor="let u of filteredUsers(); trackBy: trackById">
+        <app-user-card
+          [id]="u.id"
+          [name]="u.name"
+          [email]="u.email"
+          [city]="u.address.city"
+          [company]="u.company.name"
+        >
+        </app-user-card>
+      </ng-container>
+    </div>
+  </div>
+</section>

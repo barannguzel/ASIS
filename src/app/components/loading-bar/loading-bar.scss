@@ -1,0 +1,52 @@
+:host {
+  --lb-height: 8px;
+  --lb-radius: 8px;
+  --lb-bar: #1f4381;
+  --lb-track: #e5e7eb;
+  color: #111827;
+  font-family: system-ui, -apple-system, 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.lb-label {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.lb-track {
+  position: relative;
+  width: 100%;
+  height: var(--lb-height);
+  background: var(--lb-track);
+  border-radius: var(--lb-radius);
+  overflow: hidden;
+}
+
+.lb-bar {
+  height: 100%;
+  background: var(--lb-bar);
+  border-radius: var(--lb-radius);
+  transition: width 240ms ease;
+}
+
+.lb-bar.indeterminate {
+  position: absolute;
+  left: 0;
+  width: 30%;
+  animation: indet 1.2s infinite ease-in-out;
+}
+
+@keyframes indet {
+  0% {
+    left: -30%;
+    width: 30%;
+  }
+  50% {
+    left: 35%;
+    width: 30%;
+  }
+  100% {
+    left: 100%;
+    width: 30%;
+  }
+}

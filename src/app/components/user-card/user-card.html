@@ -1,0 +1,49 @@
+<article class="card" [attr.aria-label]="name">
+  <h3 class="card__title">{{ name }}</h3>
+
+  <ul class="card__meta">
+    <li class="meta__row">
+      <span class="meta__icon" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Zm0 0 8 6 8-6"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </span>
+      <span class="meta__text">{{ email }}</span>
+    </li>
+
+    <li class="meta__row">
+      <span class="meta__icon" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </span>
+      <span class="meta__text">{{ city }}</span>
+    </li>
+
+    <li class="meta__row">
+      <span class="meta__icon" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M20 7h-4V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v3h8v-1h4v1h8V9a2 2 0 0 0-2-2Zm-6-2v2h-4V5h4Zm8 9H2v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5Z"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+      <span class="meta__text">{{ company }}</span>
+    </li>
+  </ul>
+
+  <button type="button" class="card__button" (click)="onView()">Detayları Gör</button>
+</article>

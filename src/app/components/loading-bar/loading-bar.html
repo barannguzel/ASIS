@@ -1,0 +1,19 @@
+<div class="lb-label" aria-live="polite">{{ label }}</div>
+
+<div
+  class="lb-track"
+  role="progressbar"
+  [attr.aria-valuemin]="indeterminate ? null : 0"
+  [attr.aria-valuemax]="indeterminate ? null : 100"
+  [attr.aria-valuenow]="indeterminate ? null : clamped"
+  [style.--lb-height.px]="height"
+  [style.--lb-radius.px]="radius"
+  [style.--lb-bar]="barColor"
+  [style.--lb-track]="trackColor"
+>
+  <div
+    class="lb-bar"
+    [class.indeterminate]="indeterminate"
+    [style.width.%]="indeterminate ? null : clamped"
+  ></div>
+</div>
